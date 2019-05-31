@@ -1,4 +1,4 @@
-//ej1 hoja1 arreglos
+//ej3 hoja1 arreglos
 
 #include <iostream>
 #include <conio.h>
