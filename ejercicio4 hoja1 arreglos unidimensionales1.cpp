@@ -46,7 +46,7 @@ int main()
 			{
 				rep++;
 			}
-			if (rep >= 2)
+			if (rep >= 2 || rep > 2)
 			{
 				number = notas[i];
 			}
