@@ -7,51 +7,78 @@ using namespace std;
 using namespace System;
 
 
-int main() {
-	int *Notas;
-	int N;
-	Notas = new int[N];
-	int sumadenotas = 0;
+int main()
+{
+	int n;
+
+	int *notas = new int[n];
+	int max = 0;
+	int min = 20;
+	double sumadenotas = 0;
 	double promedio;
-	double max = 0;
-	double min = 20;
+	int number = 0;
+	int rep = 0;
 
 	do
 	{
-		cout << " Ingrese el n" << char(163) << "mero de notas a promediar: ";
-		cin >> N;
+		cout << " Ingrese el n" << char(163) << "mero de alumnos: ";
+		cin >> n;
 
-	} while (N < 0);
+	} while (n < 0);
 
-	for (int i = 0; i < N; i++)
+	for (int i = 0; i < n; i++)
 	{
 		do
 		{
-			cout << " Ingrese la nota " << i + 1 << ": ";
-			cin >> Notas[N];
+			cout << " Ingrese la nota del alumno " << i + 1 << ": ";
+			cin >> notas[i];
 
-		} while (Notas[N] < 0);
+		} while (notas[i] < 0 || notas[i]>20);
 
-		sumadenotas = sumadenotas + Notas[N];
-
-		if (Notas[N] > max)
+		sumadenotas = sumadenotas + notas[i];
+	}
+	for (int i = 0; i < n; i++)
+	{
+		rep = 0;
+		for (int j = 0; j < n; j++)
 		{
-			max = Notas[N];
-		}
-		if (Notas[N] < min)
-		{
-			min = Notas[N];
+			if (notas[i] == notas[j])
+			{
+				rep++;
+			}
+			if (rep >= 2)
+			{
+				number = notas[i];
+			}
 		}
 	}
-	promedio = sumadenotas / N;
+	for (int i = 0; i < n; i++)
+	{
+		if (notas[i] > max)
+		{
+			max = notas[i];
+		}
+	}
+	for (int i = 0; i < n; i++)
+	{
+		if (notas[i] < min)
+		{
+			min = notas[i];
+		}
+	}
+
+	promedio = sumadenotas / n;
 
 	cout << endl;
-	cout << " El promedio de las notas es :" << promedio << endl;
-	cout << " La nota m" << char(160) << "xima es :" << max << endl;
-	cout << " La nota m" << char(161) << "nima es :" << min << endl;
+	cout << " El promedio de notas es " << promedio << endl;
+	cout << " La moda es " << number << endl;
+	cout << " La m" << char(160) << "xima nota es " << max << endl;
+	cout << " La m" << char(161) << "nima nota es " << min << endl;
 	cout << endl;
 
-	delete[]Notas;
+
+	delete[]notas;
+
 	system("pause");
 
 }
