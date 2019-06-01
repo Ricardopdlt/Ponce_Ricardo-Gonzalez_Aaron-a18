@@ -1,4 +1,4 @@
-//ej4 hoja1 arreglos unidimensionales
+//ej5 hoja1 arreglos unidimensionales
 
 #include <iostream>
 #include <conio.h>
